@@ -207,7 +207,7 @@ see that this component will need to dynamically figure out which Movie it
 should render.
 
 ```javascript
-// ./src/components/MovieShow.js
+// ./src/containers/MovieShow.js
 import React from 'react';
 
 const MovieShow = props => {
@@ -334,8 +334,8 @@ export default MoviesPage
 
 Now, all the key/value pairs within `routerProps` are also passed into
 `MovieShow` as props. Just like before, one of the props we receive from the
-`Route` is `match`, and `match` contains **all the parameters from
-the URL!** These parameters are stored as key/value pairs in `match.params`.
+`Route` is `match`, and `match` happens to contain **_all the parameters from
+the URL!_** These parameters are stored as key/value pairs in `match.params`.
 The key corresponds to whatever we named the parameter in our `Route`, so in
 this case, the parameter will `movieId`. We can update `MovieShow` to utilize
 this parameter in conjunction with the `movies` data that was passed down:
@@ -359,7 +359,7 @@ Here, we've got our `movies` as an object in props. We've also got our Router
 props - from which we've extracted `match`. Within the `match` object is
 `params`. In this case, we only have the one parameter, `movieId`, which we
 defined in `MoviesPage`. Combining info from these two props lets us access the
-specific movie whose key matches the `movieId` from the URL path, resulting in
+specific movie that's key matches the `movieId` from the URL path, resulting in
 the correct movie title being displayed!
 
 We've succeeded in creating a "Master-Detail" interface - the list of movies is
